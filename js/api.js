@@ -15,7 +15,7 @@ const API_KEY = 'e3c8239551824307a5069ea4e69f54e2'
 
     Liga Perancis = 2015
 */
-const LEAGUE_ID = 2021 //Liga Inggris
+const LEAGUE_ID = 2001 //Liga Inggris
 //endpoint klasemen
 var ep_klasemen = `${base_url}competitions/${LEAGUE_ID}/standings?standingType=TOTAL`
 //endpoint pertandingan
@@ -79,19 +79,47 @@ var gettim = () => {
         .then(json)
 }
 var openloader = () => {
-    var html = `<div class="preloader-wrapper medium active">
-                    <div class="spinner-layer spinner-green-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                      </div>
-                      <div class="gap-patch">
-                        <div class="circle"></div>
-                      </div>
-                      <div class="circle-clipper right">
-                        <div class="circle"></div>
-                      </div>
-                    </div>
-              </div>`
+    var html = `<div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>`
     document.getElementById("preloader").innerHTML = html;
 }
 var closeloader = () => {
@@ -104,7 +132,7 @@ var loadklasemen = () => {
     klasemen.then(data => {
 
         var str = JSON.stringify(data).replace(/http:/g, 'https:');
-        alert(str);
+        // alert(str);
         data = JSON.parse(str);
 
         var html = ''
@@ -153,7 +181,7 @@ var loadklasemen = () => {
       `
         });
         document.getElementById("titles").innerHTML = 'Klasemen';
-        document.getElementById("utama").innerHTML = html;
+        document.getElementById("body-content").innerHTML = html;
         closeloader()
     })
 }
@@ -193,7 +221,7 @@ var loadtanding = () => {
             }
 
         }
-        document.getElementById("utama").innerHTML = html;
+        document.getElementById("body-content").innerHTML = html;
         document.getElementById("titles").innerHTML = 'Pertandingan';
         closeloader()
     })
@@ -225,7 +253,7 @@ var loadtim = () => {
               </div>`
         })
         html += "</div>"
-        document.getElementById("utama").innerHTML = html;
+        document.getElementById("body-content").innerHTML = html;
         document.getElementById("titles").innerHTML = 'Tim';
         closeloader()
     })
