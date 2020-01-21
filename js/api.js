@@ -104,10 +104,11 @@ var loadklasemen = () => {
     klasemen.then(data => {
 
         var str = JSON.stringify(data).replace(/http:/g, 'https:');
+        alert(str);
         data = JSON.parse(str);
 
         var html = ''
-        data.klasemen.forEach(klasemenx => {
+        data.standings.forEach(klasemenx => {
             var detail = ''
             klasemenx.table.forEach(result => {
                 detail += `<tr>
@@ -132,16 +133,16 @@ var loadklasemen = () => {
         <table class=" striped responsive-table">
         <thead>
           <tr>
-            <th>Posisi</th>
-            <th>Tim</th>
-            <th>Main</th>
-            <th>Menang</th>
-            <th>Seri</th>
-            <th>Kalah</th>
-            <th>Gol</th>
-            <th>GolMasuk</th>
-            <th>BedaGol</th>
-            <th>Poin</th>
+            <th>#</th>
+            <th>Team</th>
+            <th>Play</th>
+            <th>Win</th>
+            <th>Draw</th>
+            <th>Lost</th>
+            <th>GF</th>
+            <th>GA</th>
+            <th>Diff</th>
+            <th>Point</th>
           </tr>
         </thead>
         <tbody>` + detail + `</tbody>

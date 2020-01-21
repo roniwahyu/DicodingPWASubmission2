@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", function() {
   loadPage(page);
 
   function loadPage(page) {
+    if(page == 'home') loadklasemen()
+    if(page == 'matches') loadtanding()
+    if(page == 'teams') loadtim()
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4) {
