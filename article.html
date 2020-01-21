@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Submission Dicoding PWA1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Submission Dicoding PWA2</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="images/icons/favicon.ico">
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#ff9900">
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Submission Dicoding PWA1">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Submission Dicoding PWA1">
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/icons/android-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#f3a821">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Default twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@roniwahyu">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Submission Dicoding PWA1">
+    <meta property="og:image" content="images/icons/android-icon-144x144.png" />
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="images/icons/android-icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/icons/icon-192x192.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"  />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto+Slab:400,700&display=swap" rel="stylesheet">
+    <style type="text/css">
+    body {
+        margin: 0;
+        /* This is a font-stack that tries to use the system-default sans-serifs first */
+        font-family: 'Fira Sans', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 1.5;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navigasi -->
+    <nav class="orange lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo" id="logo-container">Roniwahyu.com</a>
+            <a href="./index.html" class="sidenav-trigger" data-target="nav-mobile">
+                <i class="material-icons">arrow_back</i>
+            </a>
+            <ul class="topnav right hide-on-med-and-down"></ul>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+    <!-- Akhir Navigasi -->
+    <div class="container" id="body-content"></div>
+    <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/api.js"></script>
+    <script>
+    // REGISTER SERVICE WORKER
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+            navigator.serviceWorker
+                .register("/service-worker.js")
+                .then(function() {
+                    console.log("Pendaftaran ServiceWorker berhasil");
+                })
+                .catch(function() {
+                    console.log("Pendaftaran ServiceWorker gagal");
+                });
+        });
+    } else {
+        console.log("ServiceWorker belum didukung browser ini.");
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        getArticleById();
+    });
+    </script>
+</body>
+
+</html>

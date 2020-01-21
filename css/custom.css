@@ -1,0 +1,80 @@
+@media only screen 
+   and (min-width : 1200px) {
+   /* Styles here */
+  	.logo .img-logo{max-height: 50px;display:none;}
+  	li.logo{
+  		margin-top: 5px;
+  		display:none;
+  	}
+}
+nav{
+	font-family: 'Roboto Slab', serif;
+}
+body{
+	font-family: 'Fira Sans', sans-serif;
+}
+.logo{
+	text-align: center;
+	margin-top: 32px;
+	margin-bottom: 136px;
+}
+.logo #logo-container {
+
+    height: 57px;
+    margin-bottom: 32px;
+    float: left;
+    position: relative;
+
+
+
+}
+.social-link {
+    margin-right: 10px;
+    display: inline-block;
+    width: 22px;
+    margin-bottom: 10px;
+}
+
+.carousel.carousel-slider .carousel-fixed-item.with-indicators {
+    bottom: 68px;
+}
+.carousel.carousel-slider .carousel-fixed-item {
+    right: 0;
+    position: absolute;
+    bottom: 20px;
+    z-index: 1;
+    left: 0;
+}
+.carousel .carousel-item {
+    visibility: hidden;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.center {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.red {
+    background-color: 
+    #F44336 !important;
+}
+.amber {
+    background-color: 
+    #ffc107 !important;
+}
+.white-text {
+    color: 
+    #fff !important;
+}
+.green {
+    background-color: 
+    #4CAF50 !important;
+}
+.blue {
+    background-color: 
+    #2196F3 !important;
+}
