@@ -100,8 +100,8 @@
     <div class="body-content container">
         <h1 class="header" id="titles"></h1>
         <div class="row">
-            <div id="preloader" class="center-align"></div>
-            <div id="utama" class="col s12 m12"></div>
+            <div id="loader" class="center-align"></div>
+            <!-- <div id="utama" class="col s12 m12"></div> -->
         </div>
     </div>
     <div class="container" id="body-content">
@@ -113,33 +113,43 @@
             The app will continue to work but you won't get any new data from the internet until you reconnect.
         </div>
     </div>
-   
+     <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">BolaPWA</h5>
+                    <p class="grey-text text-lighten-4">Agregrator Berita Liga Inggris</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Beranda</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Liga Indonesia</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Liga Inggris</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Liga Champions</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Tentang Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2020 Copyright Text
+                
+            </div>
+        </div>
+    </footer>
     <noscript>
         Please enable JavaScript to view this website.
     </noscript>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/fontawesome.js"></script>
     <script src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
+
     <script src="js/nav.js"></script>
     <script src="js/api.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-/*        $('.carousel').carousel({
-            dist: 0,
-            padding: 0,
-            fullWidth: true,
-            indicators: true,
-            duration: 100,
-        });
-*/    });
-
-    // autoplay()
-
-    // function autoplay() {
-    //     $('.carousel').carousel('next');
-    //     setTimeout(autoplay, 4500);
-    // }
-    </script>
+  
     <script>
     // REGISTER SERVICE WORKER
     if ("serviceWorker" in navigator) {

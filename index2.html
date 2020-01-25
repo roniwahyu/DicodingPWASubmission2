@@ -54,27 +54,136 @@
 <body>
     <my-app appTitle="BolaPWA"></my-app>
     <!-- Navigasi -->
-    <nav class="orange lighten-1" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">BolaPWA.com</a>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger">&#9776;</a>
-            <ul class="topnav right hide-on-med-and-down"></ul>
-            <ul id="nav-mobile" class="sidenav"></ul>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="row">
+                <div class="col s12">
+                    <a href="#!" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+                    <a href="#!" class="brand-logo">Release: 1.0.0-alpha.3</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="https://github.com/dogfalo/materialize/" target="_blank">Github</a></li>
+                        <li><a href="https://twitter.com/MaterializeCSS" target="_blank">Twitter</a></li>
+                        <li><a href="http://next.materializecss.com/getting-started.html" target="_blank">Docs</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
-   
-    <div class="body-content container">
-        <h1 class="header" id="titles"></h1>
-        <div class="row">
-            <div id="preloader" class="center-align"></div>
-            <div id="utama" class="col s12 m12"></div>
+    <ul id="mobile-demo" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="http://placehold.it/640/555">
+                </div>
+                <a href="#!"><img class="circle" src="http://placehold.it/640/333"></a>
+                <a href="#!"><span class="white-text name">John Doe</span></a>
+                <a href="#!"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="https://github.com/dogfalo/materialize/" target="_blank">Github</a></li>
+        <li><a href="https://twitter.com/MaterializeCSS" target="_blank">Twitter</a></li>
+        <li><a href="http://next.materializecss.com/getting-started.html" target="_blank">Docs</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Subheader</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect">Dropdown<i class="material-icons">folder</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a class="waves-effect" href="#!">First</a></li>
+                            <li><a class="waves-effect" href="#!">Second</a></li>
+                            <li><a class="waves-effect" href="#!">Third</a></li>
+                            <li><a class="waves-effect" href="#!">Fourth</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect">Dropdown<i class="material-icons">folder</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a class="waves-effect" href="#!">First</a></li>
+                            <li><a class="waves-effect" href="#!">Second</a></li>
+                            <li><a class="waves-effect" href="#!">Third</a></li>
+                            <li><a class="waves-effect" href="#!">Fourth</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">Test 1</a></li>
+        <li class="tab col s3"><a href="#test2">Test 2</a></li>
+        <li class="tab col s3"><a href="#test3">Test 3</a></li>
+        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+    </ul>
+    <div id="test1" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 1</h3>
+                    <blockquote>
+                        We’re excited to announce that jQuery is no longer a dependency in 1.0!<br> - <a href="https://medium.com/@materializecss/materialize-to-1-0-and-beyond-e0233b8ac15" target="_blank">The Materialize Team</a>
+                    </blockquote>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip">This is a link</a>
+                    <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip">This is a link</a>
+                </div>
+            </div>
         </div>
-   
     </div>
-    <div class="container" id="body-content">
-
+    <div id="test2" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 2</h3>
+                    <p>Test 2</p>
+                </div>
+            </div>
+        </div>
     </div>
-    
+    <div id="test3" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 3</h3>
+                    <p>Test 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="test4" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 4</h3>
+                    <p>Test 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="page-footer">
         <div class="container">
             <div class="row">
@@ -115,8 +224,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/fontawesome.js"></script>
     <script src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="js/api.js"></script>
+    <!-- <script src="js/nav.js"></script> -->
+    <!-- <script src="js/api.js"></script> -->
     <script type="text/javascript">
     $(document).ready(function() {
         /*        $('.carousel').carousel({

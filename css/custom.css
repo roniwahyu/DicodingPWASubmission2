@@ -207,3 +207,10 @@ body{
 td {
   vertical-align: middle;
 }
+
+.row.nobottom{
+  margin-bottom: none;
+}
+footer.page-footer{
+  background-color: #ff9900;
+}
