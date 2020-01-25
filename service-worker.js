@@ -22,7 +22,13 @@ var urlsToCache = [
     "/images/profil.jpg",
     "/images/images-pwa.png",
     "/images/logo.png",
-    "/images/icons/favicon.ico"
+    "/images/icons/favicon.ico",
+    "/images/merlin-ball.jpg",
+    "/images/champions-league.jpg",
+    "/images/stadiumwall.jpg",
+    "/images/seriea2020.jpg"
+
+
 ];
 
 self.addEventListener("install", function(event) {

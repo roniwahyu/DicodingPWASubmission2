@@ -1,11 +1,19 @@
 @media only screen 
-   and (min-width : 1200px) {
+   and (min-width : 1028px) {
    /* Styles here */
   	.logo .img-logo{max-height: 50px;display:none;}
   	li.logo{
   		margin-top: 5px;
   		display:none;
   	}
+
+}
+@media only screen
+and (max-width: 360px){
+    section.carousel{
+      display:none;
+
+    }     
 }
 nav{
 	font-family: 'Roboto Slab', serif;
@@ -16,7 +24,7 @@ body{
 .logo{
 	text-align: center;
 	margin-top: 32px;
-	margin-bottom: 136px;
+	/*margin-bottom: 136px;*/
 }
 .logo #logo-container {
 
@@ -125,4 +133,77 @@ body{
 }
 .carousel .carousel-item{
   width:100%;
+}
+
+.offline-notification {
+  transition: transform 0.3s;
+  transform: translateY(-100%) translateX(-50%);
+  position: fixed;
+  left: 50%;
+  background: #222;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  a {
+    color: white;
+    &:visited {
+      color: white;
+    }
+  }
+  &:hover {
+    .offline-notification_explanation {
+      display: block;
+    }
+  }
+}
+
+.offline-notification_explanation {
+  display: none;
+  background: inherit;
+  padding-top: 1em;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.offline-msg {
+  display: none;
+}
+
+.offline {
+  .offline-notification {
+    transition: transform 0.3s;
+    transform: translateY(0) translateX(-50%);
+  }
+
+  .online-msg {
+    display: none;
+  }
+
+  .offline-msg {
+    display: block;
+  }
+}
+
+.card {margin-top: 0!important;}
+#test1 {height:100vh; padding-top: 0.5rem; background-color: #eee;}
+#test2 {height:100vh; padding-top: 0.5rem; background-color: yellow;}
+#test3 {height:100vh; padding-top: 0.5rem; background-color: green;}
+#test4 {height:100vh; padding-top: 0.5rem; background-color: blue;}
+
+.sidenav-overlay .user-view {
+    position: relative;
+    padding: 32px 32px 0;
+    margin-bottom: 8px;
+}
+.user-view > .background{
+  background-image:   url('images/stadiumwall.jpg');
+}
+td {
+  vertical-align: middle;
 }

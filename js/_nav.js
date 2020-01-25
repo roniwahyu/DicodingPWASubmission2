@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Activate sidebar nav
   var elems = document.querySelectorAll(".sidenav");
-  var slider = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(slider)
   M.Sidenav.init(elems);
-   // var instance = M.Carousel.getInstance(elem);
   
   loadNav();
 
@@ -45,11 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
   loadPage(page);
 
   function loadPage(page) {
-    if(page == 'home') loadklasemen()
-    if(page == 'match') loadtanding()
-    // if(page == 'matches') loadklasemen()
-    // if(page == 'teams') loadtim()
-    // if(page == 'premier') loadtim()
+    if(page == 'home') loadclimate()
+    if(page == 'matches') loadtanding()
+    if(page == 'teams') loadtim()
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {

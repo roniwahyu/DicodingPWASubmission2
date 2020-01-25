@@ -63,35 +63,33 @@
         </div>
     </nav>
     <!-- Akhir Navigasi -->
-    <section class="black">
+    <section class="carousel black">
         <div class="carousel carousel-slider" data-indicators="true">
-            <div class="carousel-fixed-item">
+            <div class="carousel-item red lighten-2 white-text" href="#one!" style="background-image: url('images/stadiumwall.jpg');background-repeat: all;background-size: cover;">
                 <div class="container">
-                    <h1 class="white-text">Materialize Carousel</h1>
-                    <a class="btn waves-effect white grey-text darken-text-2" href="https://codepen.io/collection/nbBqgY/" target="_blank">button</a>
-                </div>
-            </div>
-            <div class="carousel-item red lighten-2 white-text" href="#one!">
-                <div class="container">
-                    <h2>First Slide</h2>
+                    <h2>Informasi Seputar Sepak Bola Dunia</h2>
+                    <h1 class="white-text">Bola PWA</h1>
                     <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
                 </div>
             </div>
-            <div class="carousel-item amber darken-2 white-text" href="#two!">
+            <div class="carousel-item amber darken-2 white-text" href="#two!" style="background-image: url('images/merlin-ball.jpg');background-repeat: all;background-size: cover;">
                 <div class="container">
-                    <h2>Second Slide</h2>
+                    <h2>Informasi Seputar Sepak Bola Dunia</h2>
+                    <h1 class="white-text">English Premier League</h1>
                     <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
                 </div>
             </div>
-            <div class="carousel-item green white-text" href="#three!">
+            <div class="carousel-item green white-text" href="#three!" style="background-image: url('images/champions-league.jpg');background-repeat: all;background-size: cover;">
                 <div class="container">
-                    <h2>Third Slide</h2>
+                    <h2>Informasi Seputar Sepak Bola Dunia</h2>
+                    <h1 class="white-text">UEFA Champions League</h1>
                     <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
                 </div>
             </div>
-            <div class="carousel-item blue white-text" href="#four!">
+            <div class="carousel-item blue white-text" href="#four!" style="background-image: url('images/seriea2020.jpg');background-repeat: all;background-size: cover;">
                 <div class="container">
-                    <h2>Fourth Slide</h2>
+                    <h2>Informasi Seputar Sepak Bola Dunia</h2>
+                    <h1 class="white-text">Serie A Italy</h1>
                     <p class="white-text">Etiam porta sem malesuada magna mollis euismod.</p>
                 </div>
             </div>
@@ -99,43 +97,48 @@
     </section>
     <!-- Gitter Chat Link -->
     <div class="fixed-action-btn"><a class="btn-floating btn-large red" href="https://gitter.im/Dogfalo/materialize"><i class="large material-icons">chat</i></a></div>
-     <div class="body-content container">
-
-            <h1 class="header" id="titles"></h1>
-            <div class="row">
-                <div id="preloader" class="center-align"></div>
-                <div id="utama" class="col s12 m12"></div>
-            </div>
+    <div class="body-content container">
+        <h1 class="header" id="titles"></h1>
+        <div class="row">
+            <div id="preloader" class="center-align"></div>
+            <div id="utama" class="col s12 m12"></div>
         </div>
-    
-    <div class="container" id="body-content">
-           
     </div>
+    <div class="container" id="body-content">
+    </div>
+    <div class="offline-notification">
+        It looks like you're offline.
+        <a href="">What does that mean?</a>
+        <div class="offline-notification_explanation">
+            The app will continue to work but you won't get any new data from the internet until you reconnect.
+        </div>
+    </div>
+   
     <noscript>
         Please enable JavaScript to view this website.
     </noscript>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/fontawesome.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/api.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        $('.carousel').carousel({
+/*        $('.carousel').carousel({
             dist: 0,
             padding: 0,
             fullWidth: true,
             indicators: true,
             duration: 100,
         });
-    });
+*/    });
 
-    autoplay()
+    // autoplay()
 
-    function autoplay() {
-        $('.carousel').carousel('next');
-        setTimeout(autoplay, 4500);
-    }
+    // function autoplay() {
+    //     $('.carousel').carousel('next');
+    //     setTimeout(autoplay, 4500);
+    // }
     </script>
     <script>
     // REGISTER SERVICE WORKER
@@ -150,6 +153,7 @@
                     console.log("Pendaftaran ServiceWorker gagal");
                 });
         });
+        
     } else {
         console.log("ServiceWorker belum didukung browser ini.");
     }

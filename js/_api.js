@@ -1,5 +1,8 @@
 var base_url = "https://api.football-data.org/v2/";
 //api ku
+// var url_climate="https://power.larc.nasa.gov/downloads/POWER_SinglePoint_Daily_20190101_20200101_008d90N_113d25E_bb5a7665.json";
+// var url_climate="https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=ALLSKY_SFC_SW_DWN,ALLSKY_TOA_SW_DWN,RH2M,T2M,T2M_MAX,T2M_MIN,WS2M&lat=8.0919&lon=113.2499&user=anonymous&startDate=20190101&endDate=20200101&userCommunity=AG&tempAverage=DAILY&outputList=JSON";
+var url_climate="https://power.larc.nasa.gov/cgi-bin/v1/DataAccess.py?request=execute&identifier=SinglePoint&parameters=T2M,T2M_MAX,T2M_MIN,WS2M&lat=8.0919&lon=113.2499&user=anonymous&startDate=20190101&endDate=20200101&userCommunity=AG&tempAverage=DAILY&outputList=JSON";
 const API_KEY = 'e3c8239551824307a5069ea4e69f54e2'
 
 /*
@@ -17,6 +20,7 @@ const API_KEY = 'e3c8239551824307a5069ea4e69f54e2'
 */
 var LEAGUE_ID = 2021 //Liga Inggris
 //endpoint klasemen
+// var epclimate = `${base_url}competitions/${LEAGUE_ID}/standings?standingType=TOTAL`
 var ep_klasemen = `${base_url}competitions/${LEAGUE_ID}/standings?standingType=TOTAL`
 //endpoint pertandingan
 var ep_tanding = `${base_url}competitions/${LEAGUE_ID}/matches`
@@ -26,7 +30,7 @@ var ep_tim = `${base_url}competitions/${LEAGUE_ID}/teams`
 var datatanding;
 var datatim;
 
-
+  
 var fetchApi = url => {
     return fetch(url, {
         headers: {
@@ -61,7 +65,22 @@ function error(error) {
     console.log("Error : " + error);
 }
 
+var getclimate =()=>{
+  return fetchClimate(url_climate);
+}
+//dapatkan informasi klasemen
+var getklasemen = () => {
+    return fetchApi(ep_klasemen)
+        .then(status)
+        .then(json);
+}
 
+//dapatkan informasi pertandingan
+var gettanding = () => {
+    return fetchApi(ep_tanding)
+        .then(status)
+        .then(json)
+}
 
 //dapatkan informasi tim
 var gettim = () => {
@@ -117,13 +136,65 @@ var closeloader = () => {
     document.getElementById("preloader").innerHTML = '';
 }
 
-//dapatkan informasi klasemen
-var getklasemen = () => {
-    return fetchApi(ep_klasemen)
-        .then(status)
-        .then(json);
-}
+var loadclimate = () => {
+    openloader();
+    var climate = getclimate()
+    climate.then(data => {
 
+        var str = JSON.stringify(data).replace(/http:/g, 'https:');
+        // alert(str);
+        data = JSON.parse(str);
+        alert(data);
+        var html = ''
+        /*data.standings.forEach(klasemenx => {
+            var detail = ''
+            klasemenx.table.forEach(result => {
+                detail += `<tr>
+            <td>${result.position}</td>
+            <td><img class="responsive-img" width="24" height="24" src="${ result.team.crestUrl || 'img/empty_badge.svg'}"> ${result.team.name}</td>
+            <td>${result.playedGames}</td>
+            <td>${result.won}</td>
+            <td>${result.draw}</td>
+            <td>${result.lost}</td>
+            <td>${result.goalsFor}</td>
+            <td>${result.goalsAgainst}</td>
+            <td>${result.goalDifference}</td>
+            <td>${result.points}</td>
+          </tr>`
+            })
+
+            html += `
+        <div class="col m12 s12 ">
+        <div class="card">
+        <div class="card-content">
+        <h5 class="header">${klasemenx.group}</h5>
+        <table class=" striped responsive-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Team</th>
+            <th>Play</th>
+            <th>Win</th>
+            <th>Draw</th>
+            <th>Lost</th>
+            <th>GF</th>
+            <th>GA</th>
+            <th>Diff</th>
+            <th>Point</th>
+          </tr>
+        </thead>
+        <tbody>` + detail + `</tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+      `
+        });*/
+        document.getElementById("titles").innerHTML = 'Klasemen';
+        document.getElementById("body-content").innerHTML = html;
+        closeloader()
+    })
+}
 var loadklasemen = () => {
     openloader();
     var klasemen = getklasemen()
@@ -184,58 +255,46 @@ var loadklasemen = () => {
     })
 }
 
-//dapatkan informasi pertandingan
-var gettanding = () => {
-    return fetchApi(ep_tanding)
-        .then(status)
-        .then(json)
-}
+
 var loadtanding = () => {
     openloader()
-    var matches = gettanding()
-    matches.then(data => {
-        matchesData = data;
-        // var tanggalmain=data.match;
-        var tanggalmain = groupBy(data.matches, 'matchday');
-
-        // var tanggalmain = groupBy(data.matches, 'matchday');
+    var tanding = gettanding()
+    tanding.then(data => {
+        datatanding = data;
+        var matchdays = groupkan(data.tanding, 'matchday');
 
         html = ''
-        for (const key in tanggalmain) {
+        for (const key in matchdays) {
             if (key != 'null') {
                 html += `
               <h5>Group stage - ${key} of 6</h5>
-              <div class="row">
-            `
-                tanggalmain[key].forEach(tanding => {
+              <div class="row">`
+                matchdays[key].forEach(tandingan => {
                     html += `
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content card-match row">
-              <div class="col s6"><h6>${tanding.stage}</h6></div>
-              <div class="col s6 right"><h6>${jadihbt(new Date(tanding.utcDate))}</h6></div>
-                <div class="col s4"><a href="#" onClick="getTim(${tanding.homeTeam.id})">${tanding.homeTeam.name}</a></div>
-                <div class="col s1 center">${tanding.score.fullTime.homeTeam}</div>
-                <div class="col s2 center" style="color:#ff9000"><h5>VS</h5></div>
-                <div class="col s1 center">${tanding.score.fullTime.awayTeam}</div>
-                <div class="col s4"><a href="#" onClick="getTim(${tanding.awayTeam.id})">${tanding.awayTeam.name}</a></div>
-              </div>
-            </div>
-          </div>
-            `
+                    <div class="col l6 m6  s12">
+                      <div class="card">
+                        <div class="card-content card-match ">
+                        <div style="text-align: center"><h5>${jadihbt(new Date(tandingan.utcDate))}</h5></div>
+                          <div class="col s10">${tandingan.homeTeam.name}</div>
+                          <div class="col s2">${tandingan.score.fullTime.homeTeam}</div>
+                          <div class="col s10">${tandingan.awayTeam.name}</div>
+                          <div class="col s2">${tandingan.score.fullTime.awayTeam}</div>
+                        </div>
+                        <div class=" right-align card-action">
+                       
+                        </div>
+                      </div>
+                    </div>`
                 });
-                html += `
-        </div>`
+                html += `</div>`
             }
 
         }
-        document.getElementById("titles").innerHTML = 'Pertandingan';
         document.getElementById("body-content").innerHTML = html;
+        document.getElementById("titles").innerHTML = 'Pertandingan';
         closeloader()
     })
 }
-
-
 var loadtim = () => {
     openloader()
     var timx = gettim()
@@ -269,22 +328,16 @@ var loadtim = () => {
     })
 }
 //data json di grupkan
-var groupkan = function(data, key) {
-    return data.reduce(function(i, j) {
-        (i[j[key]] = i[j[key]] || []).push(j);
-        return i;
-    }, {});
-};
-var groupBy = function(xs, key) {
-    return xs.reduce(function(rv, x) {
-        (rv[x[key]] = rv[x[key]] || []).push(x);
-        return rv;
-    }, {});
+var groupkan = function (data, key) {
+  return data.reduce(function (i, j) {
+    (i[j[key]] = i[j[key]] || []).push(j);
+    return i;
+  }, {});
 };
 
 //konversi menjadi Hari Bulan Tahun
 var jadihbt = date => {
-    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+  return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
 }
 
 // Blok kode untuk melakukan request data json

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="BolaPWA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BolaPWA</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="images/icons/favicon.ico">
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#f3a821">
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="BolaPWA">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BolaPWA">
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/icons/android-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#f3a821">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Default twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@roniwahyu">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BolaPWA">
+    <meta property="og:image" content="images/icons/android-icon-144x144.png" />
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="images/icons/android-icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/icons/icon-192x192.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto+Slab:400,700&display=swap" rel="stylesheet">
+    <style type="text/css">
+    body {
+        margin: 0;
+        /* This is a font-stack that tries to use the system-default sans-serifs first */
+        font-family: 'Fira Sans', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 1.5;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+    </style>
+</head>
+
+<body>
+    <my-app appTitle="BolaPWA"></my-app>
+    <!-- Navigasi -->
+    <nav>
+        <div class="nav-wrapper">
+            <div class="row">
+                <div class="col s12">
+                    <a href="#!" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+                    <a href="#!" class="brand-logo">Release: 1.0.0-alpha.3</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="https://github.com/dogfalo/materialize/" target="_blank">Github</a></li>
+                        <li><a href="https://twitter.com/MaterializeCSS" target="_blank">Twitter</a></li>
+                        <li><a href="http://next.materializecss.com/getting-started.html" target="_blank">Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <ul id="mobile-demo" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="http://placehold.it/640/555">
+                </div>
+                <a href="#!"><img class="circle" src="http://placehold.it/640/333"></a>
+                <a href="#!"><span class="white-text name">John Doe</span></a>
+                <a href="#!"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="https://github.com/dogfalo/materialize/" target="_blank">Github</a></li>
+        <li><a href="https://twitter.com/MaterializeCSS" target="_blank">Twitter</a></li>
+        <li><a href="http://next.materializecss.com/getting-started.html" target="_blank">Docs</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Subheader</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect">Dropdown<i class="material-icons">folder</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a class="waves-effect" href="#!">First</a></li>
+                            <li><a class="waves-effect" href="#!">Second</a></li>
+                            <li><a class="waves-effect" href="#!">Third</a></li>
+                            <li><a class="waves-effect" href="#!">Fourth</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect">Dropdown<i class="material-icons">folder</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a class="waves-effect" href="#!">First</a></li>
+                            <li><a class="waves-effect" href="#!">Second</a></li>
+                            <li><a class="waves-effect" href="#!">Third</a></li>
+                            <li><a class="waves-effect" href="#!">Fourth</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">Test 1</a></li>
+        <li class="tab col s3"><a href="#test2">Test 2</a></li>
+        <li class="tab col s3"><a href="#test3">Test 3</a></li>
+        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+    </ul>
+    <div id="test1" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 1</h3>
+                    <blockquote>
+                        We’re excited to announce that jQuery is no longer a dependency in 1.0!<br> - <a href="https://medium.com/@materializecss/materialize-to-1-0-and-beyond-e0233b8ac15" target="_blank">The Materialize Team</a>
+                    </blockquote>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip">This is a link</a>
+                    <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="test2" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 2</h3>
+                    <p>Test 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="test3" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 3</h3>
+                    <p>Test 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="test4" class="col s12">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Tab 4</h3>
+                    <p>Test 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2018 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Gitter Chat Link -->
+    <div class="fixed-action-btn"><a class="btn-floating btn-large red pulse" href="https://gitter.im/Dogfalo/materialize" target="_blank"><i class="large material-icons">chat</i></a></div>
+    <div class="offline-notification">
+        It looks like you're offline.
+        <a href="">What does that mean?</a>
+        <div class="offline-notification_explanation">
+            The app will continue to work but you won't get any new data from the internet until you reconnect.
+        </div>
+    </div>
+    <noscript>
+        Please enable JavaScript to view this website.
+    </noscript>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/fontawesome.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- <script src="js/nav.js"></script> -->
+    <!-- <script src="js/api.js"></script> -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        /*        $('.carousel').carousel({
+                    dist: 0,
+                    padding: 0,
+                    fullWidth: true,
+                    indicators: true,
+                    duration: 100,
+                });
+        */
+    });
+
+    // autoplay()
+
+    // function autoplay() {
+    //     $('.carousel').carousel('next');
+    //     setTimeout(autoplay, 4500);
+    // }
+    </script>
+    <script type="text/javascript">
+    var sidenavs = document.querySelectorAll('.sidenav')
+    for (var i = 0; i < sidenavs.length; i++) {
+        M.Sidenav.init(sidenavs[i]);
+    }
+    var dropdowns = document.querySelectorAll('.dropdown-trigger')
+    for (var i = 0; i < dropdowns.length; i++) {
+        M.Dropdown.init(dropdowns[i]);
+    }
+    var collapsibles = document.querySelectorAll('.collapsible')
+    for (var i = 0; i < collapsibles.length; i++) {
+        M.Collapsible.init(collapsibles[i]);
+    }
+    var featureDiscoveries = document.querySelectorAll('.tap-target')
+    for (var i = 0; i < featureDiscoveries.length; i++) {
+        M.FeatureDiscovery.init(featureDiscoveries[i]);
+    }
+    var materialboxes = document.querySelectorAll('.materialboxed')
+    for (var i = 0; i < materialboxes.length; i++) {
+        M.Materialbox.init(materialboxes[i]);
+    }
+    var modals = document.querySelectorAll('.modal')
+    for (var i = 0; i < modals.length; i++) {
+        M.Modal.init(modals[i]);
+    }
+    var parallax = document.querySelectorAll('.parallax')
+    for (var i = 0; i < parallax.length; i++) {
+        M.Parallax.init(parallax[i]);
+    }
+    var scrollspies = document.querySelectorAll('.scrollspy')
+    for (var i = 0; i < scrollspies.length; i++) {
+        M.ScrollSpy.init(scrollspies[i]);
+    }
+    var tabs = document.querySelectorAll('.tabs')
+    for (var i = 0; i < tabs.length; i++) {
+        M.Tabs.init(tabs[i]);
+    }
+    var tooltips = document.querySelectorAll('.tooltipped')
+    for (var i = 0; i < tooltips.length; i++) {
+        M.Tooltip.init(tooltips[i]);
+    }
+    </script>
+    <script>
+    // REGISTER SERVICE WORKER
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+            navigator.serviceWorker
+                .register("/service-worker.js")
+                .then(function() {
+                    console.log("Pendaftaran ServiceWorker berhasil");
+                })
+                .catch(function() {
+                    console.log("Pendaftaran ServiceWorker gagal");
+                });
+        });
+
+    } else {
+        console.log("ServiceWorker belum didukung browser ini.");
+    }
+
+    // REQUEST API UNTUK PERTAMA KALI
+    document.addEventListener("DOMContentLoaded", function() {
+        // getArticles();
+    });
+    window.process = { env: { NODE_ENV: 'production' } };
+    </script>
+</body>
+
+</html>
